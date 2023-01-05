@@ -1,0 +1,32 @@
+name: creevek_flutter_sandbox
+description: Base sandbox for new app with riverpod, go_router, and freezed
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.38 <0.1.0"
+
+vars:
+  name:
+    type: string
+    description: Project folder name
+    default: sandbox
+    prompt: How is the project folder named?
+
+  appName:
+    type: string
+    description: Name of the app
+    default: Example app
+    prompt: Name of the app?
+
+  useHive:
+    type: boolean
+    description: Is Hive needed?
+    default: true
+    prompt: Is HiveDB needed?
+
+  sentryDns:
+    type: string
+    description: Sentry DNS
+    default: 
+    prompt: Sentry DNS?
