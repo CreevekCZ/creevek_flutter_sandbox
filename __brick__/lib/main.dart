@@ -5,6 +5,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'core/app.dart';
 import 'core/app_setup.dart';
+import 'env.dart';
 
 final providerContainer = ProviderContainer();
 
@@ -23,8 +24,10 @@ Future<void> main() async {
   } else {
     await SentryFlutter.init(
       (options) {
-        options.dsn = '{{{sentryDns}}}';
-        options.tracesSampleRate = 1.0;
+        options
+          ..dsn = '{{{sentryDns}}}'
+          ..environment = Env.environment
+          ..tracesSampleRate = 1.0;
       },
       appRunner: () => runApp(
         UncontrolledProviderScope(
