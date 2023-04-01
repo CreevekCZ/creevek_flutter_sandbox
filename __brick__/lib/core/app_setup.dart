@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:api_com/api_com.dart';
+import 'package:flutter/foundation.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hive_flutter/hive_flutter.dart';
