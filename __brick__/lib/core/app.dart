@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'const.dart';
-import 'providers/router_provider.dart';
+import 'routing/router_provider.dart';
 import 'providers/scaffold_messager_key_provider.dart';
 
 class App extends ConsumerWidget {
