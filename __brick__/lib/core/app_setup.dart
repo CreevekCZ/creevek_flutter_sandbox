@@ -10,14 +10,18 @@ class AppSetup {
   Future<void> init() async {
     setupWeb();
 
+    // {{#useHive}}
     await _setupHive();
+    // {{/useHive}}
 
     await _setupApiCom();
   }
 
+// {{#useHive}}
   Future<void> _setupHive() async {
     await Hive.initFlutter();
   }
+// {{/useHive}}
 
   Future<void> _setupApiCom() async {
     final packageInfo = await _getPackageInfo();

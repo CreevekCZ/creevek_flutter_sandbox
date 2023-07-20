@@ -20,7 +20,7 @@ final routerProvider = Provider<GoRouter>(
       GoRoute(
         path: '/page-with-parameter/:id',
         pageBuilder: (BuildContext context, GoRouterState state) {
-          final id = int.parse(state.params['id']!);
+          final id = int.parse(state.pathParameters['id']!);
           return MaterialPage(child: Screen(id: id));
         },
       ),
@@ -50,7 +50,7 @@ class Screen extends StatelessWidget {
               ),
             ],
           ),
-          if (GoRouter.of(context).location == '/')
+          if (GoRouterState.of(context).location == '/')
             ElevatedButton(
               onPressed: () {
                 context.push('/page-with-parameter/1');
