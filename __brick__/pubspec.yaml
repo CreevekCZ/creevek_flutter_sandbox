@@ -31,7 +31,6 @@ dependencies:
   palestine_console: ^0.0.10
   path_provider: ^2.0.15
   sentry_flutter: ^7.6.2
-  unfocus_widget: ^0.0.4
   uuid: ^3.0.7
 
 
