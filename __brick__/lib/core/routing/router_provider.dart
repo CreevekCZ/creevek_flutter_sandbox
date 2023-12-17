@@ -8,7 +8,7 @@ final routerProvider = Provider<GoRouter>(
     initialLocation: '/',
     observers: [],
     redirect: (context, state) {
-      Print.green('ROUTER REDIRECT: ${state.location}', name: 'APP');
+      Print.green('ROUTER REDIRECT: ${state.uri.toString()}', name: 'APP');
       return null;
     },
     routes: [
@@ -50,7 +50,7 @@ class Screen extends StatelessWidget {
               ),
             ],
           ),
-          if (GoRouterState.of(context).location == '/')
+          if (GoRouterState.of(context).uri.toString() == '/')
             ElevatedButton(
               onPressed: () {
                 context.push('/page-with-parameter/1');

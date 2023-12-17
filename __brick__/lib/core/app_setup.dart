@@ -5,16 +5,24 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:permon/core/di.dart';
 
 class AppSetup {
-  Future<void> init() async {
-    setupWeb();
+  AppSetup._();
 
+  static final AppSetup instance = AppSetup._();
+
+  Future<void> init() async {
+    _setupDependencies();
+    _setupWeb();
     // {{#useHive}}
     await _setupHive();
     // {{/useHive}}
-
     await _setupApiCom();
+  }
+
+  void _setupDependencies() {
+    configureDependencies();
   }
 
 // {{#useHive}}
@@ -39,7 +47,7 @@ class AppSetup {
     return PackageInfo.fromPlatform();
   }
 
-  void setupWeb() {
+  void _setupWeb() {
     if (!kIsWeb) {
       return;
     }
